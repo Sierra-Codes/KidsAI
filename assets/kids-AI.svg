@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" role="img" aria-labelledby="title desc">
+  <title id="title">KidsAI logo</title>
+  <desc id="desc">Compact KidsAI wordmark with K touching yellow dot and joined AI, using brand palette colors.</desc>
+
+  <!-- Gradient from cocoa → tan → bone -->
+  <defs>
+    <linearGradient id="kidsaiGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#704C29"/>
+      <stop offset="50%" stop-color="#9A806D"/>
+      <stop offset="100%" stop-color="#B8B5A9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 'K' -->
+  <text x="10" y="34"
+        font-family="'Poppins','Montserrat',sans-serif"
+        font-weight="700"
+        font-size="32"
+        fill="url(#kidsaiGrad)">K</text>
+
+  <!-- Yellow dot touching the K -->
+  <circle cx="44.5" cy="25" r="4.5" fill="#E2A73B" />
+
+  <!-- 'AI' joined directly -->
+  <text x="50" y="34"
+        font-family="'Poppins','Montserrat',sans-serif"
+        font-weight="700"
+        font-size="32"
+        fill="#AABED6">AI</text>
+</svg>

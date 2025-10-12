@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KidsAI — Helping parents raise AI-smart kids</title>
+  <meta name="description" content="KidsAI helps families make sense of AI — simply and safely — with friendly guides, talks, and resources. Bilingual EN/ES." />
+  <link rel="icon" href="/assets/favicon.png" />
+
+  <!-- Tailwind (CDN) + brand palette A -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink:  '#141211', // headings, text-strong
+              tan:  '#9A806D', // accents, subtle text
+              cocoa:'#704C29', // primary button
+              bone: '#B8B5A9', // muted text, borders
+              mist: '#DAD8D6', // light bg
+              deep: '#573011'  // hover/dark
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            serif:['Merriweather','ui-serif','Georgia']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(20,18,17,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Simple language toggle: [data-i18n] holds EN; [data-i18n-es] holds ES. */
+    .lang-es [data-i18n]::after { content: attr(data-i18n-es); }
+    .lang-es [data-i18n] { color: inherit } /* keep styling */
+    .lang-es [data-i18n-hide-es] { display: none; }
+    .lang-en [data-i18n-hide-en] { display: none; }
+  </style>
+</head>
+
+<body class="lang-en bg-white text-brand-ink antialiased">
+ <!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#a86b3c]/20 shadow-sm text-[#2b1810]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3">
+      <!-- KidsAI SVG wordmark -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" class="h-8 w-auto" role="img" aria-labelledby="title desc">
+        <title id="title">KidsAI logo</title>
+        <desc id="desc">Compact KidsAI wordmark with K touching yellow dot and joined AI, using brand palette colors.</desc>
+
+        <!-- Gradient from cocoa → tan → bone -->
+        <defs>
+          <linearGradient id="kidsaiGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#704C29"/>
+            <stop offset="50%" stop-color="#9A806D"/>
+            <stop offset="100%" stop-color="#B8B5A9"/>
+          </linearGradient>
+        </defs>
+
+        <!-- 'K' -->
+        <text x="10" y="34"
+              font-family="'Poppins','Montserrat',sans-serif"
+              font-weight="700"
+              font-size="32"
+              fill="url(#kidsaiGrad)">K</text>
+
+        <!-- Yellow dot touching the K -->
+        <circle cx="44.5" cy="25" r="4.5" fill="#E2A73B" />
+
+        <!-- 'AI' joined directly -->
+        <text x="50" y="34"
+              font-family="'Poppins','Montserrat',sans-serif"
+              font-weight="700"
+              font-size="32"
+              fill="#AABED6">AI</text>
+      </svg>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8 text-sm text-[#2b1810]/90">
+      <a href="#about" class="hover:text-[#7c3b08] transition">About</a>
+      <a href="#resources" class="hover:text-[#7c3b08] transition">Resources</a>
+      <a href="#blog" class="hover:text-[#7c3b08] transition">Blog</a>
+      <a href="#services" class="hover:text-[#7c3b08] transition">Services</a>
+      <a href="#events" class="hover:text-[#7c3b08] transition">Partners & Events</a>
+      <a href="#contact" class="hover:text-[#7c3b08] transition">Contact</a>
+
+      <a href="#signin"
+         class="px-3 py-1.5 rounded-lg border border-[#a86b3c]/40 text-[#2b1810]
+                hover:bg-[#a86b3c]/10 hover:text-[#7c3b08] transition">
+        Sign in
+      </a>
+
+      <div class="flex items-center gap-2">
+        <button id="btn-en" class="text-xs px-2 py-1 rounded border border-[#a86b3c]/40 hover:bg-[#a86b3c]/10">EN</button>
+        <button id="btn-es" class="text-xs px-2 py-1 rounded border border-[#a86b3c]/40 hover:bg-[#a86b3c]/10">ES</button>
+      </div>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button class="md:hidden p-2 text-[#2b1810]" aria-label="Open menu"
+            onclick="document.getElementById('mnav').classList.toggle('hidden')">
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mnav" class="md:hidden hidden border-t border-[#a86b3c]/20 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="px-4 py-3 flex flex-wrap gap-4 text-sm text-[#2b1810]">
+      <a href="#about">About</a>
+      <a href="#resources">Resources</a>
+      <a href="#blog">Blog</a>
+      <a href="#services">Services</a>
+      <a href="#events">Partners & Events</a>
+      <a href="#contact">Contact</a>
+      <a href="#signin" class="px-3 py-1 rounded border border-[#a86b3c]/40">Sign in</a>
+      <div class="ml-auto flex items-center gap-2">
+        <button id="mb-en" class="text-xs px-2 py-1 rounded border border-[#a86b3c]/40">EN</button>
+        <button id="mb-es" class="text-xs px-2 py-1 rounded border border-[#a86b3c]/40">ES</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+ <!-- HERO -->
+<section
+  class="relative overflow-hidden"
+  style="background:linear-gradient(to bottom,
+    #0f0400 0%,
+    #2b1810 22%,
+    #6f3b1e 50%,
+    #a86b3c 78%,
+    #7c3b08 100%
+  );"
+>
+  <!-- Subtle top vignette for header readability -->
+  <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.22),transparent_35%)]"></div>
+
+  <div
+    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+           py-14 sm:py-20 min-h-[64vh] md:min-h-[72vh]
+           grid lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-center">
+
+    <!-- Portrait -->
+    <div class="lg:col-span-5 order-1 lg:order-none flex justify-center">
+      <div
+        class="relative w-[420px] sm:w-[500px] overflow-hidden rounded-3xl
+                   shadow-[0_18px_50px_rgba(0,0,0,0.28)] ring-1 ring-[#a86b3c]/35">
+        <img
+          src="/assets/stephen-parkin5.jpg"
+          alt="Stephen Parkin — KidsAI"
+          class="w-full h-auto object-cover rounded-3xl" />
+        <div
+          class="pointer-events-none absolute inset-0
+                     bg-[radial-gradient(60%_45%_at_55%_35%,rgba(190,130,80,0.18),transparent_65%)]"></div>
+      </div>
+    </div>
+
+    <!-- Copy -->
+    <div class="lg:col-span-7 relative z-10 lg:pl-4 xl:pl-6">
+      <p class="font-semibold tracking-wide text-sm sm:text-[15px] text-[#b9b3c6]/95 mb-3">
+        Families · Resources · Talks
+      </p>
+
+      <h1 class="font-serif font-black text-[32px] sm:text-[44px] leading-snug text-[#e5e2e8] max-w-[22ch]">
+        Helping parents raise <span class="whitespace-nowrap">AI-smart kids</span> simply and safely.
+      </h1>
+
+      <p class="mt-4 text-[17px] leading-relaxed text-[#d8d6db] max-w-[62ch]">
+        Interview-inspired guides, talks, and tools that make AI easy at home: no jargon, just what works.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-8 flex flex-wrap gap-3">
+        <!-- Primary -->
+        <a
+          href="#resources"
+          class="inline-flex items-center px-6 py-3.5 rounded-xl font-semibold
+                 bg-[#e4b458] text-[#2b1810]
+                 shadow-[0_8px_26px_rgba(228,180,88,0.35)]
+                 hover:bg-[#f0c76f] hover:shadow-[0_10px_30px_rgba(228,180,88,0.45)]
+                 transition transform hover:scale-[1.02]">
+          Explore resources
+        </a>
+
+        <!-- Secondary -->
+        <a
+          href="#talks"
+          class="inline-flex items-center px-6 py-3.5 rounded-xl font-medium
+                 border border-white/25 text-[#e5e2e8] bg-white/[0.03]
+                 hover:bg-white/[0.07] hover:border-white/35 transition">
+          Talks for schools &amp; organizations →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Center divider for visual balance -->
+  <div
+    class="hidden lg:block absolute left-1/2 top-10 bottom-10
+           w-px bg-gradient-to-b from-transparent via-white/10 to-transparent">
+  </div>
+</section>
+
+
+  <section id="about" class="py-16 sm:py-20">
+  <div class="max-w-5xl mx-auto px-6 sm:px-8 flex flex-col lg:flex-row items-center justify-center gap-14">
+    
+    <!-- TEXT -->
+    <div class="flex-1 text-[#2b1810]">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">About KidsAI</h2>
+
+      <p class="mt-4 text-[17px] leading-relaxed opacity-90 max-w-[62ch]">
+        <strong>Stephen Parkin,</strong>
+        <span class="text-[#7c3b08]">founder of KidsAI Explained</span>,  helps families make sense of AI in everyday life.
+        A former teacher and children’s mental health worker, he shows parents how to explain AI simply,
+        set safe habits, and spark creativity and critical thinking so kids grow up confident and future-ready.
+      </p>
+
+      <p class="mt-4 text-[17px] leading-relaxed opacity-90">
+        <em data-i18n-hide-en class="not-italic opacity-80">También disponible en español.</em>
+        <em data-i18n-hide-es class="not-italic opacity-80">Also available in Spanish.</em>
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#services"
+           class="inline-flex items-center px-5 py-3 rounded-xl font-semibold
+                  bg-[#a86b3c] text-white hover:bg-[#b87741] transition">
+          Book a talk
+        </a>
+  <a href="#resources"
+   class="inline-flex items-center px-5 py-3 rounded-xl font-medium
+          border border-[#a86b3c] text-[#a86b3c]
+          hover:bg-[#a86b3c]/10 hover:text-[#7c3b08] hover:border-[#a86b3c]/90 transition">
+  See resources
+</a>
+
+
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <figure class="flex-shrink-0 relative">
+      <div class="overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.22)] ring-1 ring-[#a86b3c]/35
+                  w-[260px] sm:w-[300px] lg:w-[320px] lg:max-h-[380px]">
+        <img src="/assets/stephen-parkin9.jpg"
+             alt="Stephen Parkin — KidsAI Explained"
+             class="block w-full h-full object-cover rounded-2xl">
+      </div>
+      <figcaption class="mt-3 text-sm text-[#2b1810]/70 text-center">Stephen Parkin</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- SERVICES -->
+  <section id="services" class="py-16 sm:py-20" style="background-color:#f3ece6;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-extrabold">Talks & Training</h2>
+      <p class="mt-2 text-brand-ink/80">For schools, charities, community organizations, and businesses.</p>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-5 shadow-soft ring-1 ring-brand-bone/60">
+          <h3 class="font-semibold">Schools</h3>
+          <p class="text-sm text-brand-ink/70 mt-1">Parent evenings, student workshops, teacher CPD.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-5 shadow-soft ring-1 ring-brand-bone/60">
+          <h3 class="font-semibold">Charities</h3>
+          <p class="text-sm text-brand-ink/70 mt-1">Accessible sessions for families & carers.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-5 shadow-soft ring-1 ring-brand-bone/60">
+          <h3 class="font-semibold">Community</h3>
+          <p class="text-sm text-brand-ink/70 mt-1">Libraries, clubs, faith groups, youth services.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-5 shadow-soft ring-1 ring-brand-bone/60">
+          <h3 class="font-semibold">Business</h3>
+          <p class="text-sm text-brand-ink/70 mt-1">Lunch-and-learns for working parents.</p>
+        </div>
+      </div>
+
+         <!--  CTA -->
+<div class="mt-14 text-center">
+  <p class="text-[#2b1810]/80 text-[15px] mb-4">
+    Talks are tailored to your group’s needs and can be delivered in person or online.
+      
+  </p>
+  <a href="#contact"
+     class="inline-flex items-center px-6 py-3 rounded-xl font-semibold
+            bg-[#a86b3c] text-white hover:bg-[#b87741] transition">
+    Enquire about our services
+  </a>
+</div>
+          
+    </div>
+  </section>
+
+ <!-- RESOURCES + BLOG (contrasted, lighter right column) -->
+<section id="resources-blog" class="py-16 sm:py-20" style="background-color:#fdfbf9;">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+      
+      <!-- LEFT: RESOURCES -->
+      <div class="rounded-2xl p-8 bg-[#fcf3e9] shadow-[inset_0_1px_0_rgba(168,107,60,0.12)] flex flex-col gap-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#2b1810]">Resources</h2>
+          <p class="mt-2 text-[#2b1810]/80 text-[15px]">
+            Practical tools to help families and educators explore AI safely and confidently.
+          </p>
+        </div>
+
+        <div class="grid gap-6">
+          <article class="bg-white rounded-2xl p-6 ring-1 ring-[#a86b3c]/25 shadow-[0_6px_20px_rgba(0,0,0,0.08)]">
+            <h3 class="font-semibold text-[#2b1810]">Starter Guide: AI at Home</h3>
+            <p class="text-sm text-[#3b2914]/80 mt-1">Plain-English basics, prompts, and safety habits.</p>
+            <a href="#signin" class="mt-3 inline-block text-sm font-medium text-[#a86b3c] hover:text-[#7c3b08] underline">Download</a>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 ring-1 ring-[#a86b3c]/25 shadow-[0_6px_20px_rgba(0,0,0,0.08)]">
+            <h3 class="font-semibold text-[#2b1810]">Conversation Cards</h3>
+            <p class="text-sm text-[#3b2914]/80 mt-1">10 questions to spark curiosity & critical thinking.</p>
+            <a href="#signin" class="mt-3 inline-block text-sm font-medium text-[#a86b3c] hover:text-[#7c3b08] underline">Download</a>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 ring-1 ring-[#a86b3c]/25 shadow-[0_6px_20px_rgba(0,0,0,0.08)]">
+            <h3 class="font-semibold text-[#2b1810]">Family AI Agreement</h3>
+            <p class="text-sm text-[#3b2914]/80 mt-1">Simple rules for using AI together at home.</p>
+            <a href="#signin" class="mt-3 inline-block text-sm font-medium text-[#a86b3c] hover:text-[#7c3b08] underline">Download</a>
+          </article>
+        </div>
+
+        <div class="pt-2 text-center">
+          <a href="#signin"
+             class="inline-flex items-center px-6 py-3 rounded-xl font-semibold bg-[#a86b3c] text-white hover:bg-[#b87741] transition">
+            Sign in to download all
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: BLOG -->
+      <div class="flex flex-col gap-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#2b1810]">Latest from the blog</h2>
+          <p class="mt-2 text-[#2b1810]/80 text-[15px]">
+            Short reads to help you guide AI learning at home and in class.
+          </p>
+        </div>
+
+        <div class="grid gap-6">
+          <a href="#" class="block rounded-2xl p-6 bg-[#fcf3e9] ring-1 ring-[#a86b3c]/20 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.1)] transition">
+            <h3 class="font-semibold text-[#2b1810]">What parents need to know about AI in homework</h3>
+            <p class="text-sm text-[#3b2914]/80 mt-2 leading-relaxed">Practical boundaries that keep curiosity alive.</p>
+          </a>
+
+          <a href="#" class="block rounded-2xl p-6 bg-[#fcf3e9] ring-1 ring-[#a86b3c]/20 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.1)] transition">
+            <h3 class="font-semibold text-[#2b1810]">Prompts that build critical thinking</h3>
+            <p class="text-sm text-[#3b2914]/80 mt-2 leading-relaxed">Turn “ask the bot” into “think with the bot”.</p>
+          </a>
+
+          <a href="#" class="block rounded-2xl p-6 bg-[#fcf3e9] ring-1 ring-[#a86b3c]/20 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.1)] transition">
+            <h3 class="font-semibold text-[#2b1810]">A gentle intro to AI safety at home</h3>
+            <p class="text-sm text-[#3b2914]/80 mt-2 leading-relaxed">Age-aware guidance without fear or jargon.</p>
+          </a>
+        </div>
+
+        <div class="pt-2 text-center">
+          <a href="#" class="inline-flex items-center text-sm font-medium text-[#a86b3c] border border-[#a86b3c]/60 px-3 py-1.5 rounded-lg hover:bg-[#a86b3c]/10 transition">
+            All posts →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- PARTNERS / EVENTS -->
+<section id="events" class="py-16 sm:py-20" style="background-color:fdfbf9;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#2b1810] mb-8">
+      Partners & Events
+    </h2>
+
+    <!-- Partner Bubbles (scrollable on mobile) -->
+    <div class="flex overflow-x-auto justify-center gap-4 mb-10 pb-3 snap-x snap-mandatory scrollbar-hide">
+     
+      <a href="https://masterclass.aikidscreative.com/ai_for_families_summit"
+         target="_blank" rel="noopener"
+         class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#fcf3e9] text-[#2b1810] font-medium border border-[#a86b3c]/30 shadow-sm hover:bg-[#a86b3c]/10 hover:text-[#7c3b08] transition snap-center shrink-0">
+         <img src="/assets/AI-kids-creative.png" alt="AI Kids Creative" class="h-5 w-auto object-contain" />
+         AI Parenting Summit
+      </a>
+
+       <a href="https://www.uconnecthub.com/team"
+         target="_blank" rel="noopener"
+         class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#fcf3e9] text-[#2b1810] font-medium border border-[#a86b3c]/30 shadow-sm hover:bg-[#a86b3c]/10 hover:text-[#7c3b08] transition snap-center shrink-0">
+         UConnect Hub
+      </a>
+
+      <!-- Placeholder bubbles -->
+      <span class="px-5 py-2.5 rounded-full bg-[#fffaf6] text-[#3b2914]/60 font-medium border border-[#a86b3c]/15 shadow-sm snap-center shrink-0">
+        Upcoming Partner
+      </span>
+
+      <span class="px-5 py-2.5 rounded-full bg-[#fffaf6] text-[#3b2914]/60 font-medium border border-[#a86b3c]/15 shadow-sm snap-center shrink-0">
+        New Event
+      </span>
+
+      <span class="px-5 py-2.5 rounded-full bg-[#fffaf6] text-[#3b2914]/60 font-medium border border-[#a86b3c]/15 shadow-sm snap-center shrink-0">
+        Coming Soon
+      </span>
+    </div>
+
+   <!-- Event Images -->
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto text-left sm:text-center">
+
+      <!-- Event 1 -->
+      <figure>
+        <img src="/assets/summit.png"
+             alt="Stephen Parkin AI Parenting Summit speaker"
+             class="rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] ring-1 ring-[#a86b3c]/20 object-cover w-full h-[260px] sm:h-[300px]">
+        <figcaption class="mt-3 text-sm text-[#2b1810]/80 leading-snug">
+          <strong>Guest speaker at AI Parenting Summit</strong> -  Upcoming event hosted by <em>AI Kids Creative</em>.
+        </figcaption>
+      </figure>
+
+      <!-- Event 2 -->
+      <figure>
+        <img src="/assets/grupo-nicola-hns.jpg"
+             alt="Stephen Parkin training staff at Nicola Hnos"
+             class="rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] ring-1 ring-[#a86b3c]/20 object-cover w-full h-[260px] sm:h-[300px]">
+        <figcaption class="mt-3 text-sm text-[#2b1810]/80 leading-snug">
+          <strong>Staff training at Nicola Hnos, Berrotarán.</strong>  
+          Workshop on communication and responsible AI use in workplace learning.
+        </figcaption>
+      </figure>
+
+      <!-- Event 3 -->
+      <figure>
+        <img src="/assets/school.jpg"
+             alt="Stephen Parkin giving a talk at BAPA education"
+             class="rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] ring-1 ring-[#a86b3c]/20 object-cover w-full h-[260px] sm:h-[300px]">
+        <figcaption class="mt-3 text-sm text-[#2b1810]/80 leading-snug">
+          <strong>Talk at BAPA Education, Berrotarán.</strong>  
+          Introducing students to the basics of AI and critical digital thinking.
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT (lighter shade) -->
+<section id="contact" class="py-16 sm:py-20" style="background-color:#f7f1ea;">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+
+      <!-- LEFT: copy + actions -->
+      <div>
+        <p class="uppercase tracking-wide text-[#2b1810]/60 text-sm font-semibold">Contact</p>
+        <h2 class="mt-1 text-3xl sm:text-4xl font-black text-[#2b1810]">Let’s work together</h2>
+        <p class="mt-4 text-[#2b1810]/80 text-lg leading-relaxed">
+          Want to bring KidsAI to your school or community? Get in touch and we’ll help you plan a talk or workshop.
+        </p>
+
+        <!-- Actions -->
+        <div class="mt-7 flex flex-wrap gap-4">
+          <a href="mailto:hello@kidsai.example"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#2b1810] text-white font-semibold shadow-[0_12px_28px_rgba(0,0,0,0.18)] hover:scale-[1.02] transition">
+            <!-- mail icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Zm0 0 8 6 8-6"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Email
+          </a>
+
+          <a href="#resources"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-[#a86b3c] text-[#a86b3c] font-semibold hover:bg-[#a86b3c]/10 transition">
+            View resources
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: info cards (icons + text) -->
+      <div class="grid sm:grid-cols-2 gap-5">
+        <!-- Email -->
+        <div class="rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-[#a86b3c]/15">
+          <div class="flex items-start gap-3">
+            <span class="w-11 h-11 rounded-xl grid place-items-center bg-[#2b1810] text-white shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/>
+                <path d="m4 6 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-semibold text-[#2b1810]">Email</p>
+              <p class="text-[#2b1810]/80">hello@kidsai.example</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-[#a86b3c]/15">
+          <div class="flex items-start gap-3">
+            <span class="w-11 h-11 rounded-xl grid place-items-center bg-[#2b1810] text-white shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-semibold text-[#2b1810]">Instagram</p>
+              <p class="text-[#2b1810]/80">@KidsAiExplained</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TikTok -->
+        <div class="rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-[#a86b3c]/15">
+          <div class="flex items-start gap-3">
+            <span class="w-11 h-11 rounded-xl grid place-items-center bg-[#2b1810] text-white shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15 3c.3 1.9 1.6 3.7 4 4v3.1a7.5 7.5 0 0 1-4-1.1v4.9a5 5 0 1 1-5-5c.3 0 .7 0 1 .1V12a2.5 2.5 0 1 0 1.5 2.3V3H15Z"
+                      fill="currentColor"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-semibold text-[#2b1810]">TikTok</p>
+              <p class="text-[#2b1810]/80">@KidsAiExplained</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-[#a86b3c]/15">
+          <div class="flex items-start gap-3">
+            <span class="w-11 h-11 rounded-xl grid place-items-center bg-[#2b1810] text-white shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 1 1 4 0v4M11 13h4"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-semibold text-[#2b1810]">LinkedIn</p>
+              <p class="text-[#2b1810]/80">Connect professionally</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (darker shade) -->
+<footer class="py-8" style="background-color:#efe2d6;">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#2b1810]/80">
+    <!-- Left -->
+    <p class="order-2 sm:order-1 w-full sm:w-auto text-center sm:text-left">
+      &copy; <span id="year"></span> KidsAI. All rights reserved.
+      <a href="#" class="underline hover:text-[#7c3b08] transition">Privacy</a>
+    </p>
+    <!-- Right -->
+    <a href="https://sierracodes.netlify.app/" target="_blank"
+       class="order-3 w-full sm:w-auto flex items-center justify-center sm:justify-end gap-2 opacity-90 hover:opacity-100 transition">
+      <span class="text-xs">Designed by</span>
+      <img src="/assets/sierra-codes.png" alt="Sierra Codes" class="h-6">
+    </a>
+  </div>
+</footer>
+
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+
+
+
+
+    // language toggle
+    const root = document.body;
+    const setLang = (l) => { root.classList.remove('lang-en','lang-es'); root.classList.add(l); };
+    document.getElementById('btn-en').onclick = () => setLang('lang-en');
+    document.getElementById('btn-es').onclick = () => setLang('lang-es');
+    document.getElementById('mb-en').onclick = () => setLang('lang-en');
+    document.getElementById('mb-es').onclick = () => setLang('lang-es');
+  </script>
+</body>
+</html>
