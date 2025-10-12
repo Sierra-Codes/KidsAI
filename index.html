@@ -91,9 +91,9 @@
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-8 text-sm text-[#2b1810]/90">
       <a href="#about" class="hover:text-[#7c3b08] transition">About</a>
+      <a href="#services" class="hover:text-[#7c3b08] transition">Services</a>
       <a href="#resources" class="hover:text-[#7c3b08] transition">Resources</a>
       <a href="#blog" class="hover:text-[#7c3b08] transition">Blog</a>
-      <a href="#services" class="hover:text-[#7c3b08] transition">Services</a>
       <a href="#events" class="hover:text-[#7c3b08] transition">Partners & Events</a>
       <a href="#contact" class="hover:text-[#7c3b08] transition">Contact</a>
 
@@ -120,9 +120,9 @@
   <div id="mnav" class="md:hidden hidden border-t border-[#a86b3c]/20 bg-white/95 backdrop-blur-md shadow-sm">
     <div class="px-4 py-3 flex flex-wrap gap-4 text-sm text-[#2b1810]">
       <a href="#about">About</a>
+     <a href="#services">Services</a>
       <a href="#resources">Resources</a>
       <a href="#blog">Blog</a>
-      <a href="#services">Services</a>
       <a href="#events">Partners & Events</a>
       <a href="#contact">Contact</a>
       <a href="#signin" class="px-3 py-1 rounded border border-[#a86b3c]/40">Sign in</a>
@@ -307,7 +307,7 @@
   </section>
 
  <!-- RESOURCES + BLOG (contrasted, lighter right column) -->
-<section id="resources-blog" class="py-16 sm:py-20" style="background-color:#fdfbf9;">
+<section id="resources" class="py-16 sm:py-20" style="background-color:#fdfbf9;">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
       
@@ -349,7 +349,7 @@
       </div>
 
       <!-- RIGHT: BLOG -->
-      <div class="flex flex-col gap-6">
+      <div id="blog" class="flex flex-col gap-6">
         <div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-[#2b1810]">Latest from the blog</h2>
           <p class="mt-2 text-[#2b1810]/80 text-[15px]">
@@ -587,14 +587,31 @@
   </div>
 </footer>
 
+<button id="backToTop"
+        class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-[#2b1810] text-white shadow-lg hover:bg-[#7c3b08] transition-all duration-300 opacity-0 invisible flex items-center justify-center"
+        aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-
-
-
-
+const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.remove('opacity-0', 'invisible');
+      btn.classList.add('opacity-100', 'visible');
+    } else {
+      btn.classList.add('opacity-0', 'invisible');
+      btn.classList.remove('opacity-100', 'visible');
+    }
+  });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  
     // language toggle
     const root = document.body;
     const setLang = (l) => { root.classList.remove('lang-en','lang-es'); root.classList.add(l); };
