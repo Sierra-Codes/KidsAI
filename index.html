@@ -460,77 +460,84 @@
   </section>
 
   <!-- CONTACT / FOOTER -->
-  <footer id="contact" class="bg-brand-midnight text-brand-sand">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 gap-10">
-      <!-- Contact Form -->
-      <div>
-        <h3 class="text-xl font-bold mb-4">Contact</h3>
-        <p class="text-brand-sand/90 mb-4">
-          Whether you're a parent, teacher, or event organiser, let’s start a conversation.
+<footer id="contact" class="bg-[#1C1C28] text-brand-sand border-t border-brand-sand/10">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 py-16">
+    
+    <!-- Header -->
+    <div class="mb-10">
+      <h3 class="text-sm uppercase tracking-wide text-brand-sand/70 font-semibold">Contact</h3>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 mb-4">Let’s work together</h2>
+      <p class="max-w-prose text-brand-sand/80">
+        Helping families, schools and communities navigate AI with confidence.  
+        Reach out by email or social media to collaborate or request a talk.
+      </p>
+    </div>
+
+    <!-- Contact Options -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+  <!-- Email -->
+  <div class="p-5 rounded-2xl bg-white/15 border border-white/20 hover:bg-white/20 transition">
+    <h4 class="flex items-center gap-2 font-semibold text-white mb-1">
+      <svg class="h-5 w-5 text-brand-sky" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 12l8-5.99V6H4zm16 12V9.2l-7.2 4.5a2 2 0 0 1-2.1 0L4 9.2V18h16z"/>
+      </svg>
+      Email
+    </h4>
+    <a href="mailto:info@kidsaiexplained.com" class="text-brand-sand/90 hover:text-brand-sky transition">
+      info@kidsaiexplained.com
+    </a>
+  </div>
+
+  <!-- TikTok -->
+  <div class="p-5 rounded-2xl bg-white/15 border border-white/20 hover:bg-white/20 transition">
+    <h4 class="flex items-center gap-2 font-semibold text-white mb-1">
+      <svg class="h-5 w-5 text-brand-sky" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M16.5 3a5.5 5.5 0 0 0 4.5 2V8a8.5 8.5 0 0 1-4.5-1.3V14a6 6 0 1 1-6-6c.2 0 .4 0 .6.02V10a3.5 3.5 0 1 0 3.9 3.48V3h1z"/>
+      </svg>
+      TikTok
+    </h4>
+    <a href="https://www.tiktok.com/@kidsaiexplained" target="_blank" rel="noopener" class="text-brand-sand/90 hover:text-brand-sky transition">
+      @kidsAIExplained
+    </a>
+  </div>
+
+  <!-- Instagram -->
+  <div class="p-5 rounded-2xl bg-white/15 border border-white/20 hover:bg-white/20 transition">
+    <h4 class="flex items-center gap-2 font-semibold text-white mb-1">
+      <svg class="h-5 w-5 text-brand-sky" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/>
+      </svg>
+      Instagram
+    </h4>
+    <a href="https://www.instagram.com/kidsaiexplained" target="_blank" rel="noopener" class="text-brand-sand/90 hover:text-brand-sky transition">
+      @kidsAIExplained
+    </a>
+  </div>
+</div>
+
+
+    <!-- Credits -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-between border-t border-white/10 pt-6">
+      <p class="text-sm text-brand-sand/60">
+        © 2025 KidsAI Explained — helping families navigate AI responsibly.
+      </p>
+      <div class="flex items-center gap-3 mt-4 sm:mt-0">
+        <img
+  src="assets/sierra-codes.png"
+  alt="Sierra Codes"
+  class="h-6 w-auto rounded-lg opacity-80 hover:opacity-100 transition"
+/>
+
+        <p class="text-sm text-brand-sand/70">
+          Created by <a href="https://sierracodes.com" target="_blank" rel="noopener" class="hover:text-brand-sky font-medium">Sierra Codes</a>
         </p>
-
-        <!-- Form: Netlify or Formspree -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
-          <input type="text" name="name" placeholder="Your Name" required
-                 class="w-full rounded-lg border border-brand-sand/30 bg-transparent px-4 py-3 text-brand-sand placeholder-brand-sand/70 focus:outline-none focus:ring-2 focus:ring-brand-sky/60" />
-          <input type="email" name="email" placeholder="Your Email" required
-                 class="w-full rounded-lg border border-brand-sand/30 bg-transparent px-4 py-3 text-brand-sand placeholder-brand-sand/70 focus:outline-none focus:ring-2 focus:ring-brand-sky/60" />
-          <select name="inquiry" class="w-full rounded-lg border border-brand-sand/30 bg-transparent px-4 py-3 text-brand-sand focus:outline-none focus:ring-2 focus:ring-brand-sky/60">
-            <option value="">I'm interested in...</option>
-            <option>Free Family Resources</option>
-            <option>Teen Course (AI Unlocked)</option>
-            <option>School / Teacher Training</option>
-            <option>Speaking Engagement</option>
-            <option>Other</option>
-          </select>
-          <textarea name="message" rows="4" placeholder="Your Message" required
-                    class="w-full rounded-lg border border-brand-sand/30 bg-transparent px-4 py-3 text-brand-sand placeholder-brand-sand/70 focus:outline-none focus:ring-2 focus:ring-brand-sky/60"></textarea>
-          <button type="submit"
-                  class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold
-                         bg-brand-clay text-white shadow-glow hover:brightness-105 hover:scale-[1.02] transition">
-            Send Message
-          </button>
-        </form>
-      </div>
-
-      <!-- Quick Links + Social -->
-      <div class="flex flex-col justify-between">
-        <div>
-          <h3 class="text-xl font-bold mb-4">Explore</h3>
-          <ul class="space-y-2 text-brand-sand/80 text-sm">
-            <li><a href="#resources" class="hover:text-white transition">Free Resources</a></li>
-            <li><a href="#course" class="hover:text-white transition">Online Course</a></li>
-            <li><a href="#talks" class="hover:text-white transition">Talks</a></li>
-            <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
-            <li><a href="#about" class="hover:text-white transition">About</a></li>
-          </ul>
-        </div>
-
-        <div class="mt-8">
-          <p class="text-sm text-brand-sand/70">Follow @kidsAIExplained</p>
-          <div class="mt-2 flex gap-4">
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@kidsaiexplained" class="hover:text-brand-sky" target="_blank" rel="noopener" aria-label="TikTok">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3a5.5 5.5 0 0 0 4.5 2V8a8.5 8.5 0 0 1-4.5-1.3V14a6 6 0 1 1-6-6c.2 0 .4 0 .6.02V10a3.5 3.5 0 1 0 3.9 3.48V3h1z"/></svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/kidsaiexplained" class="hover:text-brand-sky" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.8a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/></svg>
-            </a>
-            <!-- Email -->
-            <a href="mailto:info@kidsaiexplained.com" class="hover:text-brand-sky" aria-label="Email">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 12l8-5.99V6H4zm16 12V9.2l-7.2 4.5a2 2 0 0 1-2.1 0L4 9.2V18h16z"/></svg>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
+  </div>
+</footer>
 
-    <!-- Bottom -->
-    <div class="border-t border-brand-sand/20 text-center py-6 text-sm text-brand-sand/70">
-      © KidsAI Explained 2025 — AI in Plain English for Parents
-    </div>
-  </footer>
+
+
 
   <!-- Back to top -->
   <button id="backToTop"
