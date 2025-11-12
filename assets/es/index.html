@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full scroll-smooth">
+<html lang="es-AR" class="h-full scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>KidsAI — AI in Plain English for Parents</title>
-  <meta name="description" content="Helping parents guide their kids safely and confidently through AI. Free family guides, conversation cards, talks, and a practical online course for teens. EN/ES." />
+  <title>KidsAI — IA en criollo para madres, padres y docentes</title>
+  <meta name="description" content="Acompañamos a las familias para que guíen a sus hijos en el mundo de la IA con seguridad y confianza. Guías gratuitas, cartas de conversación, charlas y un curso práctico para adolescentes. ES/EN." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#1C1C28" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://kidsaiexplained.com/" />
+  <link rel="canonical" href="https://kidsaiexplained.com/es/" />
 
-  <!-- Hreflang (bilingual) -->
+  <!-- Hreflang (bilingüe) -->
   <link rel="alternate" hreflang="en" href="https://kidsaiexplained.com/" />
   <link rel="alternate" hreflang="es" href="https://kidsaiexplained.com/es/" />
   <link rel="alternate" hreflang="x-default" href="https://kidsaiexplained.com/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="KidsAI — AI in Plain English for Parents" />
-  <meta property="og:description" content="Helping parents guide their kids safely and confidently through AI. Free guides and practical tools." />
+  <meta property="og:title" content="KidsAI — IA en criollo para madres, padres y docentes" />
+  <meta property="og:description" content="Recursos claros para hablar de IA en casa y en la escuela. Guías gratuitas y herramientas prácticas." />
   <meta property="og:image" content="https://kidsaiexplained.com/assets/og-image.jpg" />
-  <meta property="og:url" content="https://kidsaiexplained.com/" />
+  <meta property="og:url" content="https://kidsaiexplained.com/es/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="KidsAI Explained" />
-  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale" content="es_AR" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="KidsAI — AI in Plain English for Parents" />
-  <meta name="twitter:description" content="Helping parents guide their kids safely and confidently through AI." />
+  <meta name="twitter:title" content="KidsAI — IA en criollo para madres, padres y docentes" />
+  <meta name="twitter:description" content="Acompañamos a las familias para que guíen a sus hijos en el mundo de la IA con seguridad y confianza." />
   <meta name="twitter:image" content="https://kidsaiexplained.com/assets/og-image.jpg" />
 
-  <!-- Icons -->
+  <!-- Íconos -->
   <link rel="icon" href="/assets/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
-  <!-- Tailwind (CDN) + brand palette -->
+  <!-- Tailwind (CDN) + paleta de marca -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp&v=2"></script>
   <script>
     tailwind.config = {
@@ -44,12 +44,12 @@
         extend: {
           colors: {
             brand: {
-              midnight: '#1C1C28', // headings, strong text
-              sand:     '#F5EDE0', // base page bg
-              steel:    '#547C99', // cool tech accent
-              sky:      '#D9E4EC', // light neutral bg
-              clay:     '#D07C66', // primary parent CTA
-              graphite: '#4F5055'  // subheads, borders
+              midnight: '#1C1C28',
+              sand:     '#F5EDE0',
+              steel:    '#547C99',
+              sky:      '#D9E4EC',
+              clay:     '#D07C66',
+              graphite: '#4F5055'
             }
           },
           fontFamily: {
@@ -65,17 +65,12 @@
     }
   </script>
 
-  <!-- Fonts -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@800;900&display=swap" rel="stylesheet" />
 
   <style>
-    /* Simple language toggle: [data-i18n] holds EN; [data-i18n-es] holds ES */
-    .lang-es [data-i18n]::after { content: attr(data-i18n-es); }
-    .lang-es [data-i18n] { color: inherit; }
-    .lang-es [data-i18n-hide-es] { display: none; }
-    .lang-en [data-i18n-hide-en] { display: none; }
     :focus:not(:focus-visible) { outline: none; }
   </style>
 
@@ -87,7 +82,7 @@
     "name": "KidsAI Explained",
     "url": "https://kidsaiexplained.com/",
     "logo": "https://kidsaiexplained.com/assets/og-image.jpg",
-    "description": "Helping parents guide their kids safely and confidently through AI with plain-English resources, talks, and a practical online course for teens.",
+    "description": "Recursos claros para familias y escuelas sobre el uso responsable de la IA. Charlas y curso práctico para adolescentes.",
     "sameAs": [
       "https://www.instagram.com/kidsaiexplained",
       "https://www.tiktok.com/@kidsaiexplained"
@@ -102,59 +97,57 @@
   </script>
 </head>
 
-<body class="lang-en bg-brand-sand text-brand-midnight antialiased scroll-smooth">
+<body class="bg-brand-sand text-brand-midnight antialiased scroll-smooth">
 
   <!-- HEADER -->
 <header class="sticky top-0 z-50 bg-brand-sand/95 backdrop-blur border-b border-brand-graphite/15">
   <div class="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
     <!-- Logo -->
-    <a href="#home" class="flex items-center gap-3 min-w-0" aria-label="KidsAI home">
+    <a href="#home" class="flex items-center gap-3 min-w-0" aria-label="Inicio KidsAI">
       <span class="font-extrabold text-lg sm:text-xl tracking-tight text-[#547C99]">
         @kidsAIExplained
       </span>
     </a>
 
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-8 text-[16px] font-semibold" aria-label="Primary">
-      <a href="#resources" class="text-[#2B2E3A] hover:text-[#547C99] transition">Free Resources</a>
-      <a href="#course" class="text-[#2B2E3A] hover:text-[#547C99] transition">Online Course</a>
-      <a href="#talks" class="text-[#2B2E3A] hover:text-[#547C99] transition">Talks</a>
-      <a href="#contact" class="text-[#2B2E3A] hover:text-[#547C99] transition">Contact</a>
-      <a href="#about" class="text-[#2B2E3A] hover:text-[#547C99] transition">About</a>
-      <a href="/es/" class="ml-2 px-3 py-1.5 rounded-lg border border-brand-graphite/20 text-[#2B2E3A] hover:bg-white/60 transition" aria-label="View in Spanish">ES</a>
+    <!-- Nav escritorio -->
+    <nav class="hidden md:flex items-center gap-8 text-[16px] font-semibold" aria-label="Principal">
+      <a href="#resources" class="text-[#2B2E3A] hover:text-[#547C99] transition">Recursos gratuitos</a>
+      <a href="#course" class="text-[#2B2E3A] hover:text-[#547C99] transition">Curso online</a>
+      <a href="#talks" class="text-[#2B2E3A] hover:text-[#547C99] transition">Charlas</a>
+      <a href="#contact" class="text-[#2B2E3A] hover:text-[#547C99] transition">Contacto</a>
+      <a href="#about" class="text-[#2B2E3A] hover:text-[#547C99] transition">Quiénes somos</a>
+      <!-- Toggle idioma -->
+      <a href="/" class="ml-2 px-3 py-1.5 rounded-lg border border-brand-graphite/20 text-[#2B2E3A] hover:bg-white/60 transition" aria-label="Ver en inglés">EN</a>
     </nav>
 
-    <!-- Mobile toggle -->
+    <!-- Botón móvil -->
     <button
       id="menu-btn"
       class="md:hidden p-3 -mr-1 text-[#2B2E3A] flex-shrink-0"
-      aria-label="Open menu"
+      aria-label="Abrir menú"
       aria-expanded="false"
       aria-controls="mnav">
-      <!-- hamburger -->
       <svg id="icon-open" class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
         <path d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
-      <!-- close (X) -->
       <svg id="icon-close" class="h-7 w-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
         <path d="M6 6l12 12M18 6L6 18"/>
       </svg>
     </button>
   </div>
 
-  <!-- Mobile menu -->
+  <!-- Menú móvil -->
   <div id="mnav" class="md:hidden hidden absolute left-0 w-full border-t border-brand-graphite/15 bg-brand-sand/95 backdrop-blur z-40">
-    <div class="px-4 py-4 flex flex-col gap-3 text-[16px] font-semibold" aria-label="Mobile">
-      <a href="#resources" class="text-[#2B2E3A] hover:text-[#547C99] transition">Free Resources</a>
-      <a href="#course" class="text-[#2B2E3A] hover:text-[#547C99] transition">Online Course</a>
-      <a href="#talks" class="text-[#2B2E3A] hover:text-[#547C99] transition">Talks</a>
-      <a href="#contact" class="text-[#2B2E3A] hover:text-[#547C99] transition">Contact</a>
-      <a href="#about" class="text-[#2B2E3A] hover:text-[#547C99] transition">About</a>
-      <a href="/es/" class="text-[#2B2E3A] hover:text-[#547C99] transition">ES</a>
+    <div class="px-4 py-4 flex flex-col gap-3 text-[16px] font-semibold" aria-label="Móvil">
+      <a href="#resources" class="text-[#2B2E3A] hover:text-[#547C99] transition">Recursos gratuitos</a>
+      <a href="#course" class="text-[#2B2E3A] hover:text-[#547C99] transition">Curso online</a>
+      <a href="#talks" class="text-[#2B2E3A] hover:text-[#547C99] transition">Charlas</a>
+      <a href="#contact" class="text-[#2B2E3A] hover:text-[#547C99] transition">Contacto</a>
+      <a href="#about" class="text-[#2B2E3A] hover:text-[#547C99] transition">Quiénes somos</a>
+      <a href="/" class="text-[#2B2E3A] hover:text-[#547C99] transition">EN</a>
     </div>
   </div>
 </header>
-
 
   <!-- HERO -->
   <section id="home" class="relative overflow-hidden text-white"
@@ -162,30 +155,30 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 min-h-[90vh]
                 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-      <!-- Text left -->
+      <!-- Texto izquierda -->
       <div class="lg:col-span-7 order-2 lg:order-1">
         <h1 class="font-serif font-black text-[32px] sm:text-[42px] leading-snug max-w-[22ch]">
-          Helping parents guide their kids safely and confidently through AI
+          Acompañamos a madres, padres y docentes para guiar a chicos y chicas en la IA con seguridad y confianza
         </h1>
         <p class="mt-4 text-[17px] leading-relaxed text-white/90 max-w-[62ch]">
-          You don’t need to be a tech expert. You just need clear, practical tools that make sense.
+          No hace falta ser experto en tecnología. Hace falta tener herramientas claras y prácticas que te sirvan en la vida real.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#resources"
              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold
                     bg-brand-clay text-white shadow-glow hover:brightness-105 hover:scale-[1.02]
                     transition">
-             Get Your Free Family AI Guide
+             Descargá la Guía Familiar de IA
           </a>
           <a href="#course"
              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold
                     bg-white/10 ring-1 ring-white/30 hover:bg-white/20 transition">
-             Explore Online Course for Teens
+             Conocé el curso online para adolescentes
           </a>
         </div>
       </div>
 
-      <!-- Image right -->
+      <!-- Imagen derecha -->
       <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
         <div class="relative w-[260px] sm:w-[320px] md:w-[360px] h-[260px] sm:h-[320px] md:h-[360px]
                     rounded-full overflow-hidden ring-2 ring-brand-sky/70 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
@@ -196,57 +189,53 @@
     </div>
   </section>
 
+  <!-- QUIÉNES SOMOS -->
   <section id="about" class="py-20 sm:py-24 bg-brand-sand">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center min-h-[60vh]">
-      <!-- Photo block -->
+      <!-- Foto -->
       <div class="lg:col-span-5 flex justify-center">
         <div class="relative">
           <img
             src="/assets/stephen-parkin-nb2.png"
-            alt="Stephen Parkin, founder of @kidsAIExplained"
+            alt="Stephen Parkin, fundador de @kidsAIExplained"
             class="block w-[220px] sm:w-[260px] lg:w-[280px] h-auto object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
             loading="lazy"
           />
         </div>
       </div>
 
-
-        <!-- Copy -->
+        <!-- Texto -->
         <div class="lg:col-span-7 text-brand-midnight">
           <p class="text-xs font-semibold uppercase tracking-wider text-brand-graphite/80">
-            About
+            Quiénes somos
           </p>
 
           <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight">
-            Hi, I’m Stephen Parkin, founder of @kidsAIExplained.
+            Hola, soy Stephen Parkin, fundador de @kidsAIExplained.
           </h2>
 
           <p class="mt-3 text-[17px] leading-relaxed text-brand-midnight/90 max-w-[62ch]">
-            I help parents talk to their kids about AI: what it is, how it works, and how to use it safely.
+            Ayudo a las familias a hablar de IA con chicos y chicas: qué es, cómo funciona y cómo usarla de forma segura y responsable.
           </p>
 
           <p class="mt-3 text-[17px] leading-relaxed text-brand-midnight/90 max-w-[62ch]">
-            I also partner with schools and organisations to make AI learning simple, human, and ethical.
+            También trabajo con escuelas y organizaciones para hacer que el aprendizaje sobre IA sea simple, humano y ético.
           </p>
 
-          <p class="mt-3 text-[15px] text-brand-graphite/90">
-            <em>También disponible en español.</em>
-          </p>
-
-          <!-- CTA row -->
+          <!-- CTA fila -->
           <div class="mt-7 flex flex-wrap gap-3">
             <a href="#resources"
                class="inline-flex items-center justify-center px-5 py-3 rounded-xl font-semibold
                       bg-brand-clay text-white hover:brightness-105 hover:scale-[1.01]
                       shadow-[0_10px_26px_rgba(208,124,102,0.28)] transition">
-              Free family resources
+              Recursos para familias
             </a>
 
             <a href="#contact"
                class="inline-flex items-center justify-center px-5 py-3 rounded-xl font-semibold
                       border border-brand-graphite/25 text-brand-midnight hover:bg-white/60 transition">
-              Contact
+              Contacto
             </a>
           </div>
         </div>
@@ -254,27 +243,27 @@
     </div>
   </section>
 
-  <!-- FREE TOOLS FOR FAMILIES -->
+  <!-- RECURSOS GRATUITOS PARA FAMILIAS -->
   <section id="resources" class="bg-brand-sky">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-32 min-h-[95vh] flex flex-col items-center justify-center text-center">
-      <!-- Title & intro -->
+      <!-- Título & intro -->
       <div class="text-center max-w-3xl mx-auto">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-midnight">
-          Free Tools for Families
+          Recursos gratuitos para familias
         </h2>
         <p class="mt-4 text-[17px] leading-relaxed text-brand-midnight/90">
-          Clear, printable resources to help you talk about AI at home. No jargon, just practical steps.
+          Material claro y descargable para conversar sobre IA en casa. Sin tecnicismos, con pasos prácticos.
         </p>
       </div>
 
-      <!-- Cards -->
+      <!-- Tarjetas -->
 <div class="mt-12 grid gap-6 sm:grid-cols-3 sm:gap-8">
-  <!-- Guide -->
+  <!-- Guía -->
   <article class="bg-white rounded-2xl shadow-soft ring-1 ring-brand-graphite/10 p-6 flex flex-col justify-between text-left">
     <div>
-      <h3 class="text-lg font-semibold text-brand-midnight">AI and Your Child: Free Guide</h3>
+      <h3 class="text-lg font-semibold text-brand-midnight">IA y tus hijos: Guía gratuita</h3>
       <p class="mt-2 text-[15px] text-brand-graphite/90 leading-relaxed">
-        Understand what AI is, where your child already uses it, and how to talk about it together at home.
+        Entendé qué es la IA, dónde ya la usan tus hijos y cómo hablar del tema juntos en casa.
       </p>
     </div>
     <div class="mt-6">
@@ -283,19 +272,20 @@
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex justify-center w-full px-4 py-2.5 rounded-xl font-semibold bg-brand-clay text-white shadow-[0_6px_20px_rgba(208,124,102,0.35)] hover:brightness-105 hover:scale-[1.02] transition"
-        aria-label="Download the Family AI Guide (PDF)"
+        aria-label="Descargar la Guía Familiar de IA (PDF)"
       >
-        Download Free Guide
+        Descargar guía
       </a>
+      <p class="mt-2 text-xs text-brand-graphite/70">Contenido actualmente en inglés.</p>
     </div>
   </article>
 
-  <!-- Conversation Cards -->
+  <!-- Cartas de conversación -->
   <article class="bg-white rounded-2xl shadow-soft ring-1 ring-brand-graphite/10 p-6 flex flex-col justify-between text-left">
     <div>
-      <h3 class="text-lg font-semibold text-brand-midnight">Family AI Conversation Cards</h3>
+      <h3 class="text-lg font-semibold text-brand-midnight">Cartas de conversación sobre IA</h3>
       <p class="mt-2 text-[15px] text-brand-graphite/90 leading-relaxed">
-        Ten short prompts to spark meaningful conversations during the school run, dinner, or family time.
+        Diez disparadores breves para charlar en el auto, durante la cena o en familia.
       </p>
     </div>
     <div class="mt-6">
@@ -304,19 +294,20 @@
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex justify-center w-full px-4 py-2.5 rounded-xl font-semibold bg-brand-clay text-white shadow-[0_6px_20px_rgba(208,124,102,0.35)] hover:brightness-105 hover:scale-[1.02] transition"
-        aria-label="Get the Conversation Cards (PDF)"
+        aria-label="Obtener las Cartas de Conversación (PDF)"
       >
-        Get the Cards
+        Obtener cartas
       </a>
+      <p class="mt-2 text-xs text-brand-graphite/70">Contenido actualmente en inglés.</p>
     </div>
   </article>
 
-  <!-- Family Agreement -->
+  <!-- Acuerdo familiar -->
   <article class="bg-white rounded-2xl shadow-soft ring-1 ring-brand-graphite/10 p-6 flex flex-col justify-between text-left">
     <div>
-      <h3 class="text-lg font-semibold text-brand-midnight">AI Family Agreement</h3>
+      <h3 class="text-lg font-semibold text-brand-midnight">Acuerdo familiar sobre IA</h3>
       <p class="mt-2 text-[15px] text-brand-graphite/90 leading-relaxed">
-        Create calm, shared rules for AI use. A simple framework families can agree on together.
+        Definí reglas simples y compartidas para un uso tranquilo y responsable de la IA.
       </p>
     </div>
     <div class="mt-6">
@@ -325,75 +316,74 @@
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex justify-center w-full px-4 py-2.5 rounded-xl font-semibold bg-brand-clay text-white shadow-[0_6px_20px_rgba(208,124,102,0.35)] hover:brightness-105 hover:scale-[1.02] transition"
-        aria-label="Download the Family Agreement (PDF)"
+        aria-label="Descargar el Acuerdo Familiar (PDF)"
       >
-        Download the Agreement
+        Descargar acuerdo
       </a>
+      <p class="mt-2 text-xs text-brand-graphite/70">Contenido actualmente en inglés.</p>
     </div>
   </article>
 </div>
 
-<!-- Subtle note -->
+<!-- Nota -->
 <p class="mt-8 text-center text-sm text-brand-graphite/80">
- También disponible en español. —
-  <a href="#contact" class="text-brand-clay font-semibold hover:underline hover:brightness-110 transition">solicitar aquí</a>.
-</p>
-
+  Recursos en español disponibles a pedido —
+  <a href="#contact" class="text-brand-clay font-semibold hover:underline hover:brightness-110 transition">solicitalos acá</a>.
 </p>
 
     </div>
   </section>
 
-  <!-- AI UNLOCKED — MAIN PRODUCT HERO (Teens Course) -->
+  <!-- AI UNLOCKED — CURSO PARA ADOLESCENTES -->
   <section id="course" class="relative overflow-hidden bg-gradient-to-br from-[#F8EFEA] via-[#F5E6DF] to-[#FAF4EF]">
     <div class="absolute inset-0 bg-[radial-gradient(80%_50%_at_80%_20%,rgba(208,124,102,0.10),transparent_60%)]"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-28 sm:pt-24 sm:pb-36 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-      <!-- Left: Copy -->
+      <!-- Izquierda: texto -->
       <div class="lg:col-span-7 text-brand-midnight">
         <p class="text-xs font-semibold uppercase tracking-wider text-brand-graphite/80">
-          For teens aged 14–16
+          Para adolescentes de 14 a 16 años
         </p>
 
         <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold leading-snug">
-          Become <span class="text-brand-clay">AI Future-Ready</span>
+          Convertite en <span class="text-brand-clay">AI Future‑Ready</span>
         </h2>
 
         <p class="mt-6 text-[17px] leading-relaxed text-brand-midnight/90 max-w-[70ch]">
-          An 8-week online, instructor-led programme for teens that builds real confidence using AI. 
-          Learn how it works, use tools safely and effectively, and complete a real-world project you can show.
+          Programa online de 8 semanas con docente en vivo para desarrollar confianza real usando IA.
+          Aprendé cómo funciona, usá herramientas de forma segura y completá un proyecto aplicable al mundo real.
         </p>
 
         <ul class="mt-6 space-y-2 text-[15px] text-brand-graphite/95 list-disc pl-5 marker:text-brand-clay">
-          <li>What AI is (and isn’t) - explained clearly</li>
-          <li>Hands-on with generative AI tools (safely and responsibly)</li>
-          <li>Prompting, iterating, and evaluating outputs</li>
-          <li>Ethics, bias, and privacy - real conversations</li>
-          <li>Where AI shows up in school, life, and future jobs</li>
-          <li>Build a portfolio-ready project by the end</li>
+          <li>Qué es (y qué no es) la IA — explicado claro</li>
+          <li>Práctica con herramientas generativas (uso seguro y responsable)</li>
+          <li>Prompts, iteración y evaluación de resultados</li>
+          <li>Ética, sesgos y privacidad — conversaciones reales</li>
+          <li>Dónde aparece la IA en la escuela, la vida y el trabajo</li>
+          <li>Terminá con un proyecto listo para tu portfolio</li>
         </ul>
       </div>
 
-      <!-- Right: CTA Card -->
+      <!-- Derecha: tarjeta CTA -->
       <div class="lg:col-span-5 self-end">
         <div class="relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-[0_18px_50px_rgba(28,28,40,0.10)] ring-1 ring-brand-graphite/10 p-8">
           <div class="flex items-start justify-between gap-4 mb-6">
             <div>
-              <p class="text-sm text-brand-graphite/80">Next Cohort</p>
-              <p class="text-xl font-semibold text-brand-midnight">Starts 18th November</p>
+              <p class="text-sm text-brand-graphite/80">Próxima cohorte</p>
+              <p class="text-xl font-semibold text-brand-midnight">Comienza el 18 de noviembre</p>
             </div>
             <span class="text-xs px-3 py-1 rounded-full bg-brand-clay text-white font-semibold whitespace-nowrap">
-              Limited places
+              Cupos limitados
             </span>
           </div>
 
-          <!-- Pills for quick facts -->
+          <!-- Píldoras info -->
           <div class="flex flex-wrap gap-2 mb-8">
-            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">8 weeks</span>
-            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Live sessions</span>
-            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Small groups</span>
-            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Hands-on learning</span>
-            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Real-world projects</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">8 semanas</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Clases en vivo</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Grupos chicos</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Aprendizaje práctico</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-clay/10 text-brand-midnight/90">Proyecto real</span>
           </div>
 
           <!-- CTAs -->
@@ -402,16 +392,14 @@
                  class="flex-1 inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl font-semibold
                         bg-brand-clay text-white shadow-[0_6px_20px_rgba(208,124,102,0.35)]
                         hover:brightness-105 hover:scale-[1.02] transition text-center">
-                Reserve your Place
+                Reservá tu lugar
               </a>
-
-            </a>
 
             <a href="#contact"
                class="flex-1 inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl font-semibold
                       text-brand-midnight bg-white border border-brand-graphite/20
                       hover:bg-brand-clay/10 hover:border-brand-clay/30 transition text-center">
-              Ask a Question
+              Hacé una consulta
             </a>
           </div>
         </div>
@@ -419,28 +407,28 @@
     </div>
   </section>
 
-  <!-- TALKS -->
+  <!-- CHARLAS -->
   <section id="talks" class="bg-brand-sky">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 min-h-[85vh] flex flex-col items-center justify-center text-center">
       <div class="max-w-3xl mx-auto mb-12">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-midnight">
-          Talks for Schools & Events
+          Charlas para escuelas y eventos
         </h2>
         <p class="mt-4 text-[17px] leading-relaxed text-brand-midnight/90 max-w-[80ch] mx-auto">
-          Stephen Parkin delivers engaging talks that make AI real, safe, and meaningful for students, parents, and educators.
-          Sessions can be adapted for classrooms, teacher training, or public events.
+          Stephen Parkin ofrece charlas que vuelven la IA algo real, seguro y significativo para estudiantes, familias y educadores.
+          Se adaptan a aulas, capacitaciones docentes y eventos abiertos.
         </p>
       </div>
 
-      <!-- Two cards -->
+      <!-- Dos tarjetas -->
       <div class="grid gap-8 sm:grid-cols-2 w-full max-w-6xl text-left">
-        <!-- Schools & Teachers -->
+        <!-- Escuelas y docentes -->
         <article class="bg-white rounded-2xl shadow-soft ring-1 ring-brand-graphite/10 p-8 flex flex-col justify-between">
           <div>
-            <h3 class="text-xl font-bold text-brand-midnight mb-3">For Schools & Teachers</h3>
+            <h3 class="text-xl font-bold text-brand-midnight mb-3">Para escuelas y docentes</h3>
             <p class="text-[16px] text-brand-graphite/90 leading-relaxed">
-              Age-appropriate assemblies, class workshops, and teacher training that spark curiosity, build confidence, and prepare students for a future shaped by AI.
-              Sessions in English or Spanish, tailored to your curriculum.
+              Actos, talleres por curso y formación docente que despiertan curiosidad, construyen confianza y preparan a los estudiantes para un futuro con IA.
+              Sesiones en inglés o español, alineadas a tu propuesta pedagógica.
             </p>
           </div>
           <div class="mt-6">
@@ -448,18 +436,18 @@
                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold
                       bg-brand-clay text-white shadow-glow hover:brightness-105 hover:scale-[1.02]
                       active:scale-[0.99] transition">
-              Book a School Talk
+              Reservar charla escolar
             </a>
           </div>
         </article>
 
-        <!-- Events -->
+        <!-- Eventos -->
         <article class="bg-white rounded-2xl shadow-soft ring-1 ring-brand-graphite/10 p-8 flex flex-col justify-between">
           <div>
-            <h3 class="text-xl font-bold text-brand-midnight mb-3">Talks & Conferences</h3>
+            <h3 class="text-xl font-bold text-brand-midnight mb-3">Eventos y conferencias</h3>
             <p class="text-[16px] text-brand-graphite/90 leading-relaxed">
-              Keynotes and panels for parents, educators, and community audiences that turn complex ideas about AI into human stories and practical insight.
-              Perfect for conferences and family learning events.
+              Keynotes y paneles para familias, educadores y comunidades que bajan ideas complejas sobre IA a historias humanas y consejos prácticos.
+              Ideal para congresos y jornadas de aprendizaje en familia.
             </p>
           </div>
           <div class="mt-6">
@@ -467,33 +455,32 @@
                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold
                       bg-brand-clay text-white shadow-glow hover:brightness-105 hover:scale-[1.02]
                       active:scale-[0.99] transition">
-              Invite Stephen to Speak
+              Invitar a Stephen como orador
             </a>
           </div>
         </article>
       </div>
 
       <p class="mt-10 text-sm text-brand-graphite/80 max-w-2xl mx-auto">
-       También disponible en español.
+        También disponible en inglés.
       </p>
     </div>
   </section>
 
-  <!-- CONTACT / FOOTER -->
+  <!-- CONTACTO / PIE -->
 <footer id="contact" class="bg-[#1C1C28] text-brand-sand border-t border-brand-sand/10">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 py-16">
-    
-    <!-- Header -->
+    <!-- Encabezado -->
     <div class="mb-10">
-      <h3 class="text-sm uppercase tracking-wide text-brand-sand/70 font-semibold">Contact</h3>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 mb-4">Let’s work together</h2>
+      <h3 class="text-sm uppercase tracking-wide text-brand-sand/70 font-semibold">Contacto</h3>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 mb-4">Trabajemos en conjunto</h2>
       <p class="max-w-prose text-brand-sand/80">
-        Helping families, schools and communities navigate AI with confidence.  
-        Reach out by email or social media to collaborate or request a talk.
+        Ayudamos a familias, escuelas y comunidades a navegar la IA con confianza.
+        Escribinos por mail o redes para colaborar o pedir una charla.
       </p>
     </div>
 
-    <!-- Contact Options -->
+    <!-- Opciones de contacto -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
   <!-- Email -->
   <div class="p-5 rounded-2xl bg-white/15 border border-white/20 hover:bg-white/20 transition">
@@ -535,21 +522,20 @@
   </div>
 </div>
 
-
-    <!-- Credits -->
+    <!-- Créditos -->
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-between border-t border-white/10 pt-6">
       <p class="text-sm text-brand-sand/60">
-        © 2025 KidsAI Explained — helping families navigate AI responsibly.
+        © 2025 KidsAI Explained — ayudando a las familias a usar IA de forma responsable.
       </p>
       <div class="flex items-center gap-3 mt-4 sm:mt-0">
         <img
-  src="assets/sierra-codes.png"
+  src="/assets/sierra-codes.png"
   alt="Sierra Codes"
   class="h-6 w-auto rounded-lg opacity-80 hover:opacity-100 transition"
 />
 
         <p class="text-sm text-brand-sand/70">
-          Created by <a href="https://sierracodes.com" target="_blank" rel="noopener" class="hover:text-brand-sky font-medium">Sierra Codes</a>
+          Desarrollado por <a href="https://sierracodes.com" target="_blank" rel="noopener" class="hover:text-brand-sky font-medium">Sierra Codes</a>
         </p>
       </div>
     </div>
@@ -557,20 +543,18 @@
 </footer>
 
 
-
-
-  <!-- Back to top -->
+  <!-- Volver arriba -->
   <button id="backToTop"
     class="fixed bottom-6 right-6 z-40 hidden rounded-full px-4 py-3 shadow-soft
            bg-brand-midnight text-white text-sm font-semibold hover:brightness-110
            focus:outline-none focus:ring-2 focus:ring-brand-sky/70 transition"
-    aria-label="Back to top">
-    ↑ Back to top
+    aria-label="Volver arriba">
+    ↑ Volver arriba
   </button>
 
   <script>
   (function () {
-    // ===== Mobile menu toggle =====
+    // ===== Menú móvil =====
     const btn    = document.getElementById('menu-btn');
     const menu   = document.getElementById('mnav');
     const openI  = document.getElementById('icon-open');
@@ -584,7 +568,7 @@
         btn.setAttribute('aria-expanded', 'false');
         openI && openI.classList.remove('hidden');
         closeI && closeI.classList.add('hidden');
-        body.classList.remove('overflow-hidden'); // re-enable scroll
+        body.classList.remove('overflow-hidden');
       };
 
       const openMenu = () => {
@@ -592,33 +576,22 @@
         btn.setAttribute('aria-expanded', 'true');
         openI && openI.classList.add('hidden');
         closeI && closeI.classList.remove('hidden');
-        body.classList.add('overflow-hidden'); // prevent page scroll under menu
+        body.classList.add('overflow-hidden');
       };
 
       const toggleMenu = () =>
         menu.classList.contains('hidden') ? openMenu() : closeMenu();
 
-      // Toggle on button
       btn.addEventListener('click', toggleMenu);
-
-      // Close when a menu link is clicked
       menu.querySelectorAll('a').forEach(el => el.addEventListener('click', closeMenu));
-
-      // Close on outside click (only if open)
       document.addEventListener('click', (e) => {
         if (menu.classList.contains('hidden')) return;
         if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu();
       });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
-      // Close on Esc
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeMenu();
-      });
-
-      // Reset state if viewport crosses md+ (avoids stuck icons/menu)
       const mq = window.matchMedia('(min-width: 768px)');
       mq.addEventListener('change', () => {
-        // On entering desktop, ensure menu is hidden and icons reset
         if (mq.matches) {
           menu.classList.add('hidden');
           btn.setAttribute('aria-expanded', 'false');
@@ -629,7 +602,7 @@
       });
     }
 
-    // ===== Back to top =====
+    // ===== Volver arriba =====
     const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
       window.addEventListener('scroll', () => {
